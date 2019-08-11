@@ -1,5 +1,7 @@
 plugins {
-    id("org.jetbrains.kotlin.js") version "1.3.41"
+    val kotlinVersion = "1.3.40"
+    
+    id("org.jetbrains.kotlin.js") version kotlinVersion
 }
 
 group = "com.anahoret."
