@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+val kotlinxHtmlVersion = "0.6.12"
+
 plugins {
     val kotlinVersion = "1.3.40"
     val springBootVersion = "2.1.6.RELEASE"
@@ -19,6 +21,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -27,6 +30,7 @@ dependencies {
     // Web
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:$kotlinxHtmlVersion")
 
     // Development
     runtimeOnly("org.springframework.boot:spring-boot-devtools")
