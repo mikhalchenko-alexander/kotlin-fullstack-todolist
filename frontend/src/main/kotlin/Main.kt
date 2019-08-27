@@ -15,5 +15,5 @@ fun main() {
         render(it) {
             app()
         }
-    }
+    } ?: console.log("No #react-app element found")
 }
