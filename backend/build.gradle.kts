@@ -39,6 +39,19 @@ dependencies {
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_1_8
 }
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+
+tasks {
+    withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
+    processResources {
+        dependsOn(":frontend:browserWebpack")
+        from(project(":frontend").projectDir.resolve("src/main/resources")) {
+            into("static")
+        }
+        from(project(":frontend").buildDir.resolve("libs/mp-todolist-frontend.js"))  {
+            into("static")
+        }
+    }
 }
